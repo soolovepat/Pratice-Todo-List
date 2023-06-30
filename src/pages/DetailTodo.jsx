@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 function DetailTodo() {
   const todos = useSelector((state) => state.todos);
@@ -10,7 +10,14 @@ function DetailTodo() {
     return item.id === parseInt(params.id);
   });
 
-  return <div>{foundData.id}</div>;
+  return (
+    <div>
+      <span>ID : {foundData.id}</span>
+      <button onClick={() => Navigate("/")}>이전으로</button>
+      <h1>{foundData.title}</h1>
+      <p>{foundData.desc}</p>
+    </div>
+  );
 }
 
 export default DetailTodo;
