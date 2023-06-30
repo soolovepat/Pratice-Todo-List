@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import todos from "../../redux/modules/todos";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addTodo } from "../../redux/modules/todos";
 
 function TodoCreate() {
