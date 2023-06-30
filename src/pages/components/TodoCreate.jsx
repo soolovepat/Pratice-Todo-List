@@ -4,10 +4,8 @@ import { addTodo } from "../../redux/modules/todos";
 
 function TodoCreate() {
   const dispatch = useDispatch();
+  const [todo, setTodo] = useState({ title: "", desc: "" });
   const [nextId, setNextId] = useState(3);
-  // const todos = useSelector((state) => {
-  //   return state.todos;
-  // });
 
   const titleChangeHandler = (event) => {
     setTodo({ ...todo, title: event.target.value });
@@ -16,8 +14,6 @@ function TodoCreate() {
   const descChangeHandler = (event) => {
     setTodo({ ...todo, desc: event.target.value });
   };
-
-  const [todo, setTodo] = useState({ title: "", desc: "" });
 
   const addTodoHandler = () => {
     const newTodo = { id: nextId, ...todo, isDone: false };
