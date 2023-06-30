@@ -1,6 +1,15 @@
 import React, { useState } from "react";
+import todos from "../../redux/modules/todos";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo } from "../../redux/modules/todos";
 
-function TodoCreate({ todos, setTodos }) {
+function TodoCreate() {
+  const dispatch = useDispatch();
+  const [nextId, setNextId] = useState(3);
+  // const todos = useSelector((state) => {
+  //   return state.todos;
+  // });
+
   const titleChangeHandler = (event) => {
     setTodo({ ...todo, title: event.target.value });
   };
@@ -11,14 +20,12 @@ function TodoCreate({ todos, setTodos }) {
 
   const [todo, setTodo] = useState({ title: "", desc: "" });
 
-  let nextId = 3;
   const addTodoHandler = () => {
     const newTodo = { id: nextId, ...todo, isDone: false };
-    setTodos([...todos, newTodo]);
-    nextId++;
+    setNextId((prevId) => prevId + 1); // nextId 값을 1 증가
+    dispatch(addTodo(newTodo));
 
-    //input값 초기화
-    setTodo({ title: "", desc: "" });
+    setTodo({ title: "", desc: "" }); //input값 초기화
   };
   return (
     <form>
