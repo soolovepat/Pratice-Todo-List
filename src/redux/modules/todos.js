@@ -29,14 +29,14 @@ export const removeTodo = (payload) => {
 const initialState = [
   {
     id: 1,
-    title: "할일1",
-    desc: "설명1",
+    title: "React Todo-List 반복 학습하기",
+    desc: "10번 반복 !!!",
     isDone: false,
   },
   {
     id: 2,
-    title: "할일2",
-    desc: "설명2",
+    title: "Redux 학습하기",
+    desc: "예제 10번 따라하기 !",
     isDone: false,
   },
 ];
