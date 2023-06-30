@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeTodo, toggleTodo } from "../../redux/modules/todos";
+import { Link } from "react-router-dom";
 
 const TodoItem = ({ todo }) => {
   const { id, title, desc, isDone } = todo;
@@ -31,6 +32,9 @@ const TodoItem = ({ todo }) => {
             <button onClick={handleToggle}>완료</button>
           </>
         )}
+      </div>
+      <div>
+        <Link to={`/detail-todo${id}`}>상세보기</Link>
       </div>
     </div>
   );

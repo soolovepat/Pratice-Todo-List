@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 function DetailTodo() {
   // const params = useParams();
-  // const foundData = "a";
+  // const foundData = todos.find(());
   return <div>DetailTodo</div>;
 }
 
