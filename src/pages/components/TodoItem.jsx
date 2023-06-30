@@ -34,7 +34,7 @@ const TodoItem = ({ todo }) => {
         )}
       </div>
       <div>
-        <Link to={`/detail-todo${id}`}>상세보기</Link>
+        <Link to={`/${id}`}>상세보기</Link>
       </div>
     </div>
   );
