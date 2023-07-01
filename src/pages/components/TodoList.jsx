@@ -1,6 +1,7 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 import { useSelector } from "react-redux";
+import { styled } from "styled-components";
 
 const TodoSection = ({ title, todos, isDone }) => {
   const filteredTodos = todos.filter((todo) => todo.isDone === isDone);
@@ -8,11 +9,11 @@ const TodoSection = ({ title, todos, isDone }) => {
   return (
     <section>
       <h2>{title}</h2>
-      <ul>
+      <FlexUl>
         {filteredTodos.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />
         ))}
-      </ul>
+      </FlexUl>
     </section>
   );
 };
@@ -29,3 +30,7 @@ const TodoList = () => {
 };
 
 export default TodoList;
+
+const FlexUl = styled.ul`
+  display: flex;
+`;

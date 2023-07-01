@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { removeTodo, toggleTodo } from "../../redux/modules/todos";
 import { Link } from "react-router-dom";
+import { styled } from "styled-components";
 
 const TodoItem = ({ todo }) => {
   const { id, title, desc, isDone } = todo;
@@ -17,7 +18,7 @@ const TodoItem = ({ todo }) => {
   };
 
   return (
-    <div key={id}>
+    <ListBox key={id}>
       <h3>{title}</h3>
       <p>{desc}</p>
       <div>
@@ -36,8 +37,15 @@ const TodoItem = ({ todo }) => {
       <div>
         <Link to={`/${id}`}>상세보기</Link>
       </div>
-    </div>
+    </ListBox>
   );
 };
 
 export default TodoItem;
+
+const ListBox = styled.div`
+  width: 220px;
+  margin-right: 10px;
+  border: 1px solid #5fff87;
+  border-radius: 24px;
+`;
